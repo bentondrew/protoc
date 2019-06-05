@@ -12,5 +12,6 @@ RUN apt-get update && \
     mv include/google/ /usr/local/include/ && \
     rm -rf include/ protoc-3.7.1-linux-x86_64.zip readme.txt && \
     go get -u github.com/golang/protobuf/protoc-gen-go
+USER gouser
 ENTRYPOINT ["protoc"]
 CMD ["--help"]
